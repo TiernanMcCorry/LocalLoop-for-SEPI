@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Account Creation/Login</title>
+	<link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+	<div id="container">
+		<h1>Account Creation/Login</h1>
+		<div id="form">
+			<form action="account.php" method="post">
+				<label for="email">Email:</label>
+				<input type="email" name="email" id="email" required><br>
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password" required><br>
+				<input type="submit" value="Login/Create Account">
+			</form>
+			<script>
+				// Save the same possible login details to each device that accesses the site
+				if (typeof(Storage) !== "undefined") {
+					localStorage.setItem("email", document.getElementById("email").value);
+					localStorage.setItem("password", document.getElementById("password").value);
+				}
+			</script>
+		</div>
+	</div>
+</body>
+
