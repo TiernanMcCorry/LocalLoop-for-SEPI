@@ -5,41 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LocalLoop</title>
     <link rel="stylesheet" href="stylesheet.css">
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalLoop</title>
+  <link rel="stylesheet" href="StyleSheet.css">
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="header">
-        <span>LocalLoop</span>
-        <i class="fas fa-bell" onclick="alert('Notifications not yet implemented')"></i>
-    </div>
+  <header class="header">
+    <h1 class="logo">LocalLoop</h1>
+    <button class="icon-button" aria-label="Notifications" onclick="alert('Notifications not yet implemented')">
+      <i class="fas fa-bell"></i>
+    </button>
+  </header>
 
-    <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30234.05728710171!2d-6.319539570557107!3d54.86328917833884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48603410cd42e129%3A0xd10181120eb86c9c!2sBallymena!5e1!3m2!1sen!2suk!4v1760435965454!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
-    </div>
+  <main>
+    <section class="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30234.05728710171!2d-6.319539570557107!3d54.86328917833884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48603410cd42e129%3A0xd10181120eb86c9c!2sBallymena!5e1!3m2!1sen!2suk!4v1760435965454!5m2!1sen!2suk"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </section>
 
-    <div class="events-section">
-        <div class="section-title">Upcoming Events</div>
+    <section class="events-section">
+      <h2 class="section-title">Upcoming Events</h2>
 
-        <div class="event-card">
-            <div class="event-icon"><i class="fas fa-utensils"></i></div>
-            <div class="event-details">
-                <h3>Community Potluck</h3>
-            </div>
+      <div class="event-card">
+        <div class="event-icon bg-orange">
+          <i class="fas fa-utensils"></i>
         </div>
-
-        <div class="event-card">
-            <div class="event-icon" style="background-color: #2ec4b6;"><i class="fas fa-recycle"></i></div>
-            <div class="event-details">
-                <h3>Neighborhood Cleanup</h3>
-                <p>Saturday • 9:00 AM • Main Street</p>
-            </div>
+        <div class="event-details">
+          <h3>Community Potluck</h3>
+          <p>Friday • 6:00 PM • Community Center</p>
         </div>
-    </div>
+      </div>
 
-    <button class="add-button">+</button>
-    <nav>
-        <button class="nav-item" onclick="window.location.href='localLoop.html'"><i class="fas fa-home"></i><span>Home</span></button>
-        <button class="nav-item" onclick="window.location.href='Events.html'"><i class="fas fa-calendar"></i><span>Events</span></button>
+      <div class="event-card">
+        <div class="event-icon bg-teal">
+          <i class="fas fa-recycle"></i>
+        </div>
+        <div class="event-details">
+          <h3>Neighborhood Cleanup</h3>
+          <p>Saturday • 9:00 AM • Main Street</p>
+        </div>
+      </div>
+    </section>
+
+    <button class="add-button" aria-label="Add new event">+</button>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="location.href='localLoop.html'">
+      <i class="fas fa-home"></i><span>Home</span>
+    </button>
+    <button class="nav-item" onclick="location.href='Events.html'">
+      <i class="fas fa-calendar"></i><span>Events</span>
+    </button>
+    <button class="nav-item" onclick="location.href='Chat.html'">
+      <i class="fas fa-comments"></i><span>Chat</span>
+    </button>
+    <button class="nav-item" onclick="location.href='Profile.html'">
+      <i class="fas fa-user"></i><span>Profile</span>
+    </button>
+  </nav>
+</body>
+</html>
+="nav-item" onclick="window.location.href='Events.html'"><i class="fas fa-calendar"></i><span>Events</span></button>
         <button class="nav-item" onclick="window.location.href='Chat.html'"><i class="fas fa-comments"></i><span>Chat</span></button>
         <button class="nav-item" onclick="window.location.href='Profile.html'"><i class="fas fa-user"></i><span>Profile</span></button>
     </nav>
