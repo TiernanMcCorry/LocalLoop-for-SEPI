@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalLoop Chat</title>
+    <link rel="stylesheet" href="StyleSheet.css">
+</head>
+<body>
+    <div class="header">
+        <span>Community Chat</span>
+    </div>
+
+    <div class="chat-container">
+        <div class="messages" id="messages">
+            <div class="message received">Welcome to the community chat!</div>
+        </div>
+
+        <div class="chat-input">
+            <input type="text" id="chatBox" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div class="nav-bar">
+        <div class="nav-item" onclick="window.location.href='LocalLoop.html'"><i class="fas fa-home"></i><span>Home</span></div>
+        <div class="nav-item" onclick="window.location.href='Events.html'"><i class="fas fa-calendar"></i><span>Events</span></div>
+        <div class="nav-item active" onclick="window.location.href='Chat.html'"><i class="fas fa-comments"></i><span>Chat</span></div>
+        <div class="nav-item" onclick="window.location.href='Profile.html'"><i class="fas fa-user"></i><span>Profile</span></div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let input = document.getElementById('chatBox');
+            let message = input.value.trim();
+
+            if (message !== "") {
+                let msgContainer = document.createElement('div');
+                msgContainer.classList.add('message', 'sent');
+                msgContainer.textContent = message;
+                document.getElementById('messages').appendChild(msgContainer);
+                input.value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
