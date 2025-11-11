@@ -5,6 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LocalLoop Chat</title>
     <link rel="stylesheet" href="StyleSheet.css">
+    <style>
+        .chat-container {
+            padding: 20px;
+            margin: 20px 20px 80px 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #messages {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .event-card.sent {
+            align-self: flex-end;
+            border-left: 4px solid #20B2AA;
+            background: #e8f8f2;
+        }
+
+        .message-text {
+            font-size: 0.95rem;
+            color: #2F4F4F;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+            margin-left: 100px;
+            padding: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-input button {
+            background: linear-gradient(135deg, #3CB371 0%, #20B2AA 100%);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(32, 178, 170, 0.3);
+        }
+
+        .chat-input button:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <div class="header">
@@ -39,10 +97,21 @@
             let message = input.value.trim();
 
             if (message !== "") {
-                let msgContainer = document.createElement('div');
-                msgContainer.classList.add('message', 'sent');
-                msgContainer.textContent = message;
-                document.getElementById('messages').appendChild(msgContainer);
+                let msgCard = document.createElement('div');
+                msgCard.classList.add('event-card', 'sent');
+
+                let msgIcon = document.createElement('div');
+                msgIcon.classList.add('event-icon');
+                msgIcon.innerHTML = '<i class=\"fas fa-user\"></i>';
+
+                let msgText = document.createElement('div');
+                msgText.classList.add('event-details', 'message-text');
+                msgText.textContent = message;
+
+                msgCard.appendChild(msgIcon);
+                msgCard.appendChild(msgText);
+                document.getElementById('messages').appendChild(msgCard);
+
                 input.value = "";
             }
         }
